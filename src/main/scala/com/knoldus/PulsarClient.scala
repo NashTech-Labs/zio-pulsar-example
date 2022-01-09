@@ -1,12 +1,8 @@
 package com.knoldus
 
-import org.apache.pulsar.client.api.{ClientBuilder, PulsarClientException, PulsarClient as JavaPulsarClient}
+import org.apache.pulsar.client.api.{ ClientBuilder, PulsarClient as JavaPulsarClient, PulsarClientException }
 import zio.*
 
-/**
- * PulsarClient -> PulsarConsumer -> Consuming the data from queue of pulsar
- * Pulsar Setup - I will be using standalone pulsar 2.9.1 using docker
- */
 trait PulsarClient:
   def client: IO[PulsarClientException, JavaPulsarClient]
 end PulsarClient

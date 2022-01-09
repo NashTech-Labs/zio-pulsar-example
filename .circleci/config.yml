@@ -37,3 +37,5 @@ jobs:
             - v1-dependencies-
 
       - run: cat /dev/null | sbt compile
+
+      - run: cat /dev/null | sbt check

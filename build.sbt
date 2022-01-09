@@ -4,13 +4,13 @@ val pulsarVersion = "2.9.1"
 lazy val root = project
   .in(file("."))
   .settings(
-    name := "zio-pulsar-example",
-    version := "0.1",
-    scalaVersion := "3.1.0",
-    developers := List(
+    name                       := "zio-pulsar-example",
+    version                    := "0.1",
+    scalaVersion               := "3.1.0",
+    developers                 := List(
       Developer("PKOfficial", "Prabhat Kashyap", "prabhat.kashyap@knoldus.com", url("https://github.com/PKOfficial"))
     ),
-    Test / fork := true,
+    Test / fork                := true,
     (Test / parallelExecution) := false,
     libraryDependencies ++= Seq(
       "dev.zio"          %% "zio"           % zioVersion,
@@ -20,3 +20,4 @@ lazy val root = project
   )
 
 addCommandAlias("fmt", "all scalafmtSbt scalafmt test:scalafmt")
+addCommandAlias("check", "all scalafmtSbtCheck scalafmtCheck test:scalafmtCheck")
